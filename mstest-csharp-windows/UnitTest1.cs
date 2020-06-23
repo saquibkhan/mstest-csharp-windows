@@ -12,8 +12,9 @@ namespace mstest_csharp_windows
         {
             if (context.Properties["paramName"] != null)
             {
-                string testParam = context.Properties["paramName"].ToString();
-                Logger.LogMessage(testParam);
+                string testParamValue = context.Properties["paramName"].ToString();
+                Logger.LogMessage(testParamValue);
+                Assert.AreEqual("argwith\"aquote", testParamValue);
             }
         }
 
